@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -12,7 +13,7 @@ module.exports = {
     assetModuleFilename: 'images/[contenthash][ext]', // 静态文件保存地址+名称
   },
 
-  mode: 'development',
+  mode: 'production',
 
   devtool: 'inline-source-map',
 
@@ -62,6 +63,12 @@ module.exports = {
         test: /\.(css|less)$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'], // 从右往左执行
       },
+    ]
+  },
+
+  optimization: { // 优化项
+    minimizer: [
+      new CssMinimizerPlugin()
     ]
   }
 }

@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -20,7 +21,11 @@ module.exports = {
       template: './index.html', // 入口html文件模板
       filename: 'app.html', // 入口html文件名
       inject: 'body',  // 在哪里引入js文件
-    })
+    }),
+
+    new MiniCssExtractPlugin({
+      filename: 'styles/[contenthash].css'
+    }),
   ],
 
   devServer: {
@@ -55,7 +60,7 @@ module.exports = {
       },
       {
         test: /\.(css|less)$/,
-        use: ['style-loader', 'css-loader', 'less-loader'], // 从右往左执行
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'], // 从右往左执行
       },
     ]
   }

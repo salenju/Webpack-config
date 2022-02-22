@@ -54,8 +54,8 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'], // 从右往左执行
+        test: /\.(css|less)$/,
+        use: ['style-loader', 'css-loader', 'less-loader'], // 从右往左执行
       },
     ]
   }

@@ -1,1 +1,0 @@
-module.exports = "欢迎来到Webpack世界"

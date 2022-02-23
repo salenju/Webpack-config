@@ -64,12 +64,26 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'], // 从右往左执行
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/, // 字体
         type: 'asset/resource'
       },
       {
-        test: /\.(csv|tsv)/,
+        test: /\.(csv|tsv)/, // csv数据
         use: ['csv-loader'],
+      }, {
+        test: /\.js$/,
+        exclude: /node_modules/, // node_modules下的文件不做babel的转换
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: [
+              [
+                '@babel/plugin-transform-runtime'
+              ]
+            ]
+          },
+        }
       }
     ]
   },

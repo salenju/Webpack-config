@@ -5,6 +5,7 @@ import exampleTxt from './assets/example.txt'
 import jpgMap from './assets/img-2.jpg'
 import './style.css'
 import './theme.less'
+import Data from './assets/data.csv'
 
 helloWorld()
 
@@ -35,3 +36,6 @@ const span = document.createElement('span')
 span.classList.add('icon')
 span.innerHTML = '&#xe667;'
 document.body.appendChild(span)
+
+
+console.log('==>Data',Data);

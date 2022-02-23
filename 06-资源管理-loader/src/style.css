@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url(assets/iconfont.woff) format('truetype');
+}
+
+.icon {
+  font-family: iconfont;
+  font-size: 30px;
+  color: #2a2a2a;
+}
+
 .hello {
   color: red;
 }

@@ -30,3 +30,8 @@ img3.src = jpgMap
 document.body.appendChild(img3)
 
 document.body.classList.add('hello')
+
+const span = document.createElement('span')
+span.classList.add('icon')
+span.innerHTML = '&#xe667;'
+document.body.appendChild(span)

@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin') // 抽离CSS
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin') // 压缩CSS
 
 module.exports = {
   entry: './src/index.js',
@@ -63,6 +63,10 @@ module.exports = {
         test: /\.(css|less)$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'], // 从右往左执行
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        type: 'asset/resource'
+      }
     ]
   },
 

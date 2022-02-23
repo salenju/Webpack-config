@@ -13,7 +13,7 @@ module.exports = {
     assetModuleFilename: 'images/[contenthash][ext]', // 静态文件保存地址+名称
   },
 
-  mode: 'production',
+  mode: 'development',
 
   devtool: 'inline-source-map',
 

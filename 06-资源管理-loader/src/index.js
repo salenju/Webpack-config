@@ -20,6 +20,7 @@ document.body.appendChild(img2)
 
 const block = document.createElement('div')
 block.style.cssText = 'width: 200px; height: 200px; background: aliceblue'
+block.classList.add('block-bg')
 block.textContent = exampleTxt
 document.body.appendChild(block)
 
